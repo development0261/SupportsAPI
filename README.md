@@ -11,3 +11,5 @@ Update MAIL_USERNAME, MAIL_PASSWORD, MAIL_FROM_ADDRESS variables .env file
 
 # Run Project
 php artisan serve
+
+Please Refer the doc file that exist in root folder (doc file.txt).

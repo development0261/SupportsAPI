@@ -1,0 +1,78 @@
+#API Doc
+
+------------------
+Customer API
+------------------
+
+1. Create ticket
+	Endpoint: http://127.0.0.1:8000/api/createTicket
+	Method type: post
+	bearer-token: required (If bearer token not found it will display login message)
+	
+	Data:- 
+	title(String)
+	description(String)
+	
+------------------
+Support API
+------------------
+	
+1. Filter tickets
+	Endpoint: http://127.0.0.1:8000/api/filterTickets
+	Method type: post
+	bearer-token: required (If bearer token not found it will display login message)
+	
+	Data:- 
+	name(String)
+	status(String)
+
+2. Update Ticket Status
+	Endpoint: http://127.0.0.1:8000/api/updateTicketStatus
+	Method type: post
+	bearer-token: required (If bearer token not found it will display login message)
+	
+	Data:- 
+	ticket_id(integer) (tickets table id)
+	status(String)
+	
+------------------
+Common API for both Support & Customer
+------------------
+
+1. Register
+	Endpoint: http://127.0.0.1:8000/api/register
+	Method type: post
+	
+	Data:- 
+	name(string)
+	email(String)
+	password(string)
+	password_confirmation(string)
+	user_type(string) (Customer, Support)
+	
+2. Login
+	Endpoint: http://127.0.0.1:8000/api/login
+	Method type: post
+	
+	Data:- 
+	email(String)
+	password(string)
+	
+3. Get Tickets
+	Endpoint: http://127.0.0.1:8000/api/getTickets
+	Method type: get
+	bearer-token: required (If bearer token not found it will display login message)
+	
+4. Get ticket details
+	Endpoint: http://127.0.0.1:8000/api/getTicketDetails/replace_with_ticket_id
+	Method type: get
+	bearer-token: required (If bearer token not found it will display login message)
+
+5. Send Message
+	Endpoint: http://127.0.0.1:8000/api/sendMessage
+	Method type: post
+	bearer-token: required (If bearer token not found it will display login message)
+	
+	Data:- 
+	ticket_id(integer) (tickets table id)
+	message(String)
